@@ -1,10 +1,10 @@
 # t27
-#include <stdio.h>
-#include <string.h>
-#define NUM 11
-#define STRMAX 100
-#define MAX 100
-#define MAXTURMA 50
+#include <stdio.h> <br>
+#include <string.h> <br>
+#define NUM 11 <br>
+#define STRMAX 100<br>
+#define MAX 100<br>
+#define MAXTURMA 50<br>
 
 struct TURMA{
 	char numTurma[NUM], disciplina[STRMAX], nomeProf[STRMAX];
