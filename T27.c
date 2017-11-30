@@ -51,10 +51,10 @@ int cadastraAluno(struct TURMA *t, int n, int qtdAluno){
 	
 	int i;
 	 
-	double fg1,fg2,fg3, m1, m2,media;
+	double fg1,fg2,fg3, m1, m2,media,mediaFinal;
 	for(i = 0; i < qtdAluno;i++){
 	    
-	    //printf("# ------- ALUNO [%i] da turma %i ",i, t[i].al[n].numTurma);
+	    //printf("# ------- ALUNO [%i] da turma %i ",i, numeroTurma);
 		printf("\n# Numero de matricula do ALUNO: ");
 		    do{
 		        fgets(t[i].al[n].numMat,STRMAX,stdin);
@@ -78,9 +78,18 @@ int cadastraAluno(struct TURMA *t, int n, int qtdAluno){
 		if(media < 6.0){
 			printf("\n# Nota G3: ");
 			scanf("%lf",&t[i].al[n].g3);
+			fg3 = t[i].al[n].g3;
 			
 			m1 = (fg3 + (2*fg2)) /3.0; 
 			m2 = (fg1 + (2*fg3)) /3.0;
+			if(m1>m2){
+			    mediaFinal = m1;
+			}else{
+			    mediaFinal = m2;
+			}
+		}else{
+		    fg3=0.0;
+		    mediaFinal = media;// se n fizer g3, a media final sera a propria media 
 		}
 		
 	}
